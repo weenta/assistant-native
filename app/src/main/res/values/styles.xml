@@ -16,4 +16,13 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">#ffffff</item>
     </style>
+
+    <!-- 按钮-红色背景 -->
+    <style name="redBtn">
+        <item name="android:background">@drawable/btn_bg</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
 </resources>

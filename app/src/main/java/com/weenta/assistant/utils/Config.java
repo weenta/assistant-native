@@ -16,6 +16,7 @@ public class Config  {
     // 聚合数据-笑话大全 key
     public static final String JOKE_KEY = "b6295e146775567e051f25bdce25941b";
 
-
+    // 数据智汇-物流查询
+    public static final String EXPRESS_APP_KEY = "d743f88b20bc46c991d910a594bcb8da";
 
 }

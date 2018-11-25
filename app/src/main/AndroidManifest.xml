@@ -23,8 +23,8 @@
         </activity>
 
         <activity android:name=".ui.NewsDetailActivity" android:label="新闻详情"/>
+        <activity android:name=".ui.ExpressActivity" android:label="物流查询" />
     </application>
-
 
 
 </manifest>
