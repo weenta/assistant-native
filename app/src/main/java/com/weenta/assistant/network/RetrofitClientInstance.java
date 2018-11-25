@@ -4,9 +4,13 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClientInstance {
-    // 数据智汇api-新闻 快递
+    // 数据智汇api-新闻、快递
     private static final String BASE_URL_SHUJUZHIHUI = "http://api.shujuzhihui.cn/api/";
     private static Retrofit retrofitShujuzhihui;
+
+    // 聚合数据-笑话大全
+    private static final String BASE_URL_JUHESHUJU = "http://v.juhe.cn/";
+    private static Retrofit retrofitJuheshuju;
 
     /**
      * 数据智汇-新闻 快递
@@ -20,5 +24,18 @@ public class RetrofitClientInstance {
                     .build();
         }
         return retrofitShujuzhihui;
+    }
+
+    /**
+     * 聚合数据-笑话大全
+     */
+    public static Retrofit getRetrofitJuheshuju() {
+        if(retrofitJuheshuju == null) {
+            retrofitJuheshuju = new Retrofit.Builder()
+                    .baseUrl(BASE_URL_JUHESHUJU)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofitJuheshuju;
     }
 }
