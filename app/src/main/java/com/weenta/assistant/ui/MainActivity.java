@@ -1,28 +1,20 @@
 package com.weenta.assistant.ui;
 
-import android.Manifest;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.weenta.assistant.R;
 import com.weenta.assistant.fragment.AssistantFragment;
 import com.weenta.assistant.fragment.JokeFragment;
 import com.weenta.assistant.fragment.NewsFragment;
-import com.weenta.assistant.ui.BaseActivity;
-import com.weenta.assistant.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +24,11 @@ public class MainActivity extends BaseActivity {
     private TabLayout mTabLayout;
     private List<Fragment> viewPagerList;
     private List<String> tabbarList;
+    private int[] tabIcons = {
+            R.drawable.tab_icon_news,
+            R.drawable.tab_icon_joke,
+            R.drawable.tab_icon_assistant,
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,8 +85,28 @@ public class MainActivity extends BaseActivity {
 
         // TabLayout 绑定ViewPager
         mTabLayout.setupWithViewPager(mViewPager);
-
-
+        // 自定义tab view
+        View tab0 = getTabView(0);
+        View tab1 = getTabView(1);
+        View tab2 = getTabView(2);
+        mTabLayout.getTabAt(0).setCustomView(tab0);
+        mTabLayout.getTabAt(1).setCustomView(tab1);
+        mTabLayout.getTabAt(2).setCustomView(tab2);
     }
+
+    // 自定义tabView
+    private View getTabView(int position) {
+        String s = tabbarList.get(position);
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View tabView = inflater.inflate(R.layout.tab_item, null);
+        TextView title = tabView.findViewById(R.id.tab_text);
+        ImageView icon = tabView.findViewById(R.id.tab_icon);
+
+        title.setText(s);
+        icon.setImageResource(tabIcons[position]);
+        return tabView;
+    }
+
+
 
 }
