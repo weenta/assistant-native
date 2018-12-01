@@ -109,12 +109,18 @@ public class JokeFragment extends Fragment{
             @Override
             public void onResponse(Call<JokeList> call, Response<JokeList> response) {
                 L.i(response.toString());
-                List<JokeItem> jokeItems = response.body().getResult().getData();
-                list.addAll(jokeItems);
-                adapter.notifyDataSetChanged();
-                progressBar.setVisibility(View.GONE);
-                isMore = true;
-                if(page == 1) refreshLayout.setRefreshing(false);
+
+                JokeList.JokeResult result = response.body().getResult();
+                if(result != null) {
+                    List<JokeItem> jokeItems = result.getData();
+                    list.addAll(jokeItems);
+                    adapter.notifyDataSetChanged();
+                    progressBar.setVisibility(View.GONE);
+                    isMore = true;
+                    if(page == 1) refreshLayout.setRefreshing(false);
+                }else {
+                    Util.toast(getActivity(),response.body().getReason());
+                }
             }
 
             @Override
