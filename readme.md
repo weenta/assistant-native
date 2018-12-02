@@ -4,6 +4,10 @@
 ## Notes 
 ### WebView
 
+### recyclerview
+- 使用recycleview瀑布流布局 加载图片，在加载下一页时候没办法自然过渡，整个页面会重排
+- 尝试使用gridVeiw
+
 ## api
 - 新闻、快递-数据智汇
 http://www.shujuzhihui.cn/dataApi?hot=1
@@ -20,4 +24,5 @@ https://gank.io/api
 - 增加休息视频
 
 美女福利
+
 
