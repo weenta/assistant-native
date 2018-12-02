@@ -12,6 +12,10 @@ public class RetrofitClientInstance {
     private static final String BASE_URL_JUHESHUJU = "http://v.juhe.cn/";
     private static Retrofit retrofitJuheshuju;
 
+    // 干货集中营-美女福利
+    private static final String BASE_URL_GANHUO = "https://gank.io/api/";
+    private static Retrofit retrofitGanhuo;
+
     /**
      * 数据智汇-新闻 快递
      * @return
@@ -37,5 +41,19 @@ public class RetrofitClientInstance {
                     .build();
         }
         return retrofitJuheshuju;
+    }
+
+    /**
+     * 干货集中营-美女福利
+     *
+     */
+    public static Retrofit getRetrofitGanhuo() {
+        if(retrofitGanhuo == null) {
+            retrofitGanhuo = new Retrofit.Builder()
+                    .baseUrl(BASE_URL_GANHUO)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofitGanhuo;
     }
 }
