@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.weenta.assistant.R;
 import com.weenta.assistant.fragment.AssistantFragment;
+import com.weenta.assistant.fragment.GirlFragment;
 import com.weenta.assistant.fragment.JokeFragment;
 import com.weenta.assistant.fragment.NewsFragment;
 
@@ -27,6 +28,7 @@ public class MainActivity extends BaseActivity {
     private int[] tabIcons = {
             R.drawable.tab_icon_news,
             R.drawable.tab_icon_joke,
+            R.drawable.tab_icon_girl,
             R.drawable.tab_icon_assistant,
     };
 
@@ -45,11 +47,13 @@ public class MainActivity extends BaseActivity {
         viewPagerList = new ArrayList<>();
         viewPagerList.add(new NewsFragment());
         viewPagerList.add(new JokeFragment());
+        viewPagerList.add(new GirlFragment());
         viewPagerList.add(new AssistantFragment());
 
         tabbarList = new ArrayList<>();
         tabbarList.add("今日要闻");
         tabbarList.add("轻松一刻");
+        tabbarList.add("美女社区");
         tabbarList.add("生活助手");
 
     }
@@ -89,9 +93,11 @@ public class MainActivity extends BaseActivity {
         View tab0 = getTabView(0);
         View tab1 = getTabView(1);
         View tab2 = getTabView(2);
+        View tab3 = getTabView(3);
         mTabLayout.getTabAt(0).setCustomView(tab0);
         mTabLayout.getTabAt(1).setCustomView(tab1);
         mTabLayout.getTabAt(2).setCustomView(tab2);
+        mTabLayout.getTabAt(3).setCustomView(tab3);
     }
 
     // 自定义tabView
