@@ -51,6 +51,7 @@ public class GirlFragment extends Fragment {
     }
 
     private void initEvent() {
+        // 监听滚动
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             private int lastVisibleItem;
 
@@ -74,6 +75,8 @@ public class GirlFragment extends Fragment {
                 lastVisibleItem = findMax(into);
             }
         });
+
+
     }
 
     /**

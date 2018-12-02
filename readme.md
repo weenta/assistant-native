@@ -5,8 +5,9 @@
 ### WebView
 
 ### recyclerview
-- 使用recycleview瀑布流布局 加载图片，在加载下一页时候没办法自然过渡，整个页面会重排
-- 尝试使用gridVeiw
+- 使用recycleview瀑布流布局，图片宽高比不确定，在加载下一页时候没办法自然过渡，整个页面会重排
+- 使用Glide裁剪图片
+
 
 ## api
 - 新闻、快递-数据智汇
@@ -20,9 +21,7 @@ https://gank.io/api
 
 ## todo
 - joke移动到assistant
-
 - 增加休息视频
 
-美女福利
 
 
